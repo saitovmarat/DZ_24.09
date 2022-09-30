@@ -6,17 +6,23 @@ namespace ДЗ_24._09
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Task 1 *");
+            Console.WriteLine("Task 1");
             Console.WriteLine("Чему равна длина окна? ");
             int a = int.Parse(Console.ReadLine());
             Console.WriteLine("Чему равна ширина окна? ");
             int b = int.Parse(Console.ReadLine());
-            int d = Math.Min(a, b) - 1;
-            Console.WriteLine($"Голова Васи должна быть как минимум диметром {d}, чтобы пролезть в окно");
+            Console.WriteLine("Чему равен диаметр круглой головы Васи? ");
+            int d = int.Parse(Console.ReadLine());
+            int srzn_window = Math.Min(a, b) - 1;
+            if (d - srzn_window > 0)
+                Console.WriteLine("Не пролезет");
+            else
+                Console.WriteLine("Пролезет");
             Console.ReadKey();
             Console.Clear();
 
-            Console.WriteLine("Task 2 *");
+
+            Console.WriteLine("Task 2");
             Console.Write("Напишите число: ");
             int num = int.Parse(Console.ReadLine());           
             Console.WriteLine($"Таблица умножения с числом {num}" + "\n" + 
@@ -32,7 +38,8 @@ namespace ДЗ_24._09
             Console.ReadKey();
             Console.Clear();
 
-            Console.WriteLine("Task 3 *");
+
+            Console.WriteLine("Task 3");
             Console.Write("Напишите число: ");
             int numb = int.Parse(Console.ReadLine());
             if ((numb % 5 == 0) & (numb % 3 == 0))
@@ -46,17 +53,28 @@ namespace ДЗ_24._09
             Console.ReadKey();
             Console.Clear();
 
-            // Console.WriteLine("Task 4");
-            //  Console.WriteLine(" ");
-            //  string a = Console.ReadLine();
-            //  string[] arr = new string[a.Length];
-            //   bool flag = true;
-            //   for (int b = 0; b >= a.Length; b++)
-            //  {
-            //      if (Char.IsLower(a[b) || a[b] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0})
-            //  }
 
-            Console.WriteLine("Task 5 *");
+            Console.WriteLine("Task 4");
+            Console.Write("Введите строку ");
+            string s1 = Console.ReadLine();
+            char[] char1 = s1.ToCharArray();
+            int n = 0;
+            for (int i = 0; i < char1.Length; i++)
+            {
+                if (char.IsUpper(char1[i]))
+                {
+                    n++;
+                }
+            }
+            if (n == char1.Length)
+                Console.WriteLine($"\"{s1}\" -> True");
+            else
+                Console.WriteLine($"\"{s1}\" -> False");
+            Console.ReadKey();
+            Console.Clear();
+
+
+            Console.WriteLine("Task 5");
             Console.WriteLine("Сколько овец хочешь посчитать? ");
             int num_sheep = int.Parse(Console.ReadLine());
                 for (int i = 1; i < num_sheep+1; i++ )
@@ -66,27 +84,11 @@ namespace ДЗ_24._09
             Console.ReadKey();
             Console.Clear();
 
-            //Console.WriteLine("Task 6");
-            // Console.WriteLine(" ");
-            //   try
-            // {   
-            //   string[] posl = Console.ReadLine().Split(' ');
-            //  int sum = 0;
-            //  for (int a = 0; a < posl.Length; a++)
-            //   {
-            //      sum += posl[a];
-            //   }
-            //  }
-            // catch ()
-            // {
-            //   Console.WriteLine("Впиши непустую последовательность неотрицательных целых чисел, оканчивающуюся отрицательным числом.");
-            // }
-            // finally
-            // {
-            //
-            // }
 
-            Console.WriteLine("Task 7 *");
+            //Console.WriteLine("Task 6");
+
+
+            Console.WriteLine("Task 7");
             Console.Write("k = ");
             try
             {
@@ -131,7 +133,99 @@ namespace ДЗ_24._09
             }
             Console.ReadKey();
             Console.Clear();
-        }
+
+            Console.WriteLine("Task 8");
+            string[] dolls = { "Anabel", "Hello Kitty", "Barbie doll", "doll1", "doll2", "doll3" };
+            int bag = 0;
+            foreach (string doll in dolls)
+            {
+                if (doll == "Hello Kitty" || doll == "Barbie doll")
+                    bag++;
+            }
+            Console.WriteLine(bag);
+            Console.ReadKey();
+            Console.Clear();
+
+
+            Console.WriteLine("Task 9");
+            Console.WriteLine("Введите номер дня недели ");
+            try
+            {
+                int den = int.Parse(Console.ReadLine());
+                switch (den)
+                {
+                    case 1:
+                        Console.WriteLine("Понедельник");
+                        break;
+                    case 2:
+                        Console.WriteLine("Вторник");
+                        break;
+                    case 3:
+                        Console.WriteLine("Среда");
+                        break;
+                    case 4:
+                        Console.WriteLine("Четверг");
+                        break;
+                    case 5:
+                        Console.WriteLine("Пятница");
+                        break;
+                    case 6:
+                        Console.WriteLine("Суббота");
+                        break;
+                    case 7:
+                        Console.WriteLine("Воскресенье");
+                        break;
+                    default:
+                        Console.WriteLine("Нет дня недели такого номера");
+                        break;
+                }
+            }
+            catch (System.FormatException)
+            {
+                Console.WriteLine("Попробуйте еще раз, введите число ");
+            }
+            Console.ReadKey();
+            Console.Clear();
+
+
+            Console.WriteLine("Задание 10");
+            int[] bubble = { 52, 44, 13, 26, 1 };
+            int var;
+            for (int i = 0; i < bubble.Length; i++)
+            {
+                for (int j = 0; j < bubble.Length - 1 - i; j++)
+                {
+                    if (bubble[j] > bubble[j + 1])
+                    {
+                        var = bubble[j];
+                        bubble[j] = bubble[j + 1];
+                        bubble[j + 1] = var;
+                    }
+
+                }
+            }
+            for (int k = 0; k < bubble.Length; k++)
+            {
+                Console.Write(bubble[k] + " ");
+            }
+            Console.ReadKey();
+            Console.Clear();
+
+
+            //Console.WriteLine("Задание 11");
+            //int[] numers = { 1, 2, 4, 3, 5, 6, 7 };
+            //int m = 0;
+            //for (int q = 0; q < numers.Length - 1; q++)
+            //{
+                //if (numers[q] < numers[q + 1])
+                    //m++;
+                //else
+                    //Console.WriteLine($"{q}");
+                //break;
+
+
+
+            }
            
     }
 }

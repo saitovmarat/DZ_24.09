@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "дз", "ДЗ_24.09\дз.csproj", "{B0A85DC6-FBB1-4D8F-9874-29E85516A498}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "кр", "кр\кр.csproj", "{2A496E2D-6075-4762-9AED-9CDB1D8B6DE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "кр", "кр\кр.csproj", "{2A496E2D-6075-4762-9AED-9CDB1D8B6DE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
